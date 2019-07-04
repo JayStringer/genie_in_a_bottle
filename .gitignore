@@ -1,0 +1,9 @@
+# vscode files
+/.vscode
+
+# Python gubbins
+*.pyc
+
+# virtualenv and setup.py files
+/venv_*/
+/*.egg-info/

@@ -152,5 +152,9 @@ def get_device_status(device_id=None, port=None):
     return jsonify(retval)
 
 
-if __name__ == "__main__":
+def main():
+    """Run app"""
     app.run()
+
+if __name__ == "__main__":
+    main()
