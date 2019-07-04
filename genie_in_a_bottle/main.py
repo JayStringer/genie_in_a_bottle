@@ -126,11 +126,10 @@ def get_device_status(device_id=None, port=None):
             if target is None:
                 return jsonify({"error": f"Device with ID {device_id} not found"})
 
-
         if port is None:
             retval = {"status": {}}
-            for port in range(sispm.getminport(target), sispm.getmaxport(target) + 1):
-                retval["status"][port] = sispm.getstatus(target, port)
+            for socket in range(sispm.getminport(target), sispm.getmaxport(target) + 1):
+                retval["status"][socket] = sispm.getstatus(target, socket)
 
         elif validate_port(target, port):
             retval = {"status": sispm.getstatus(target, port)}
@@ -146,8 +145,8 @@ def get_device_status(device_id=None, port=None):
 
             retval["status"][device_id] = {}
 
-            for port in range(sispm.getminport(device), sispm.getmaxport(device) + 1):
-                retval["status"][device_id][port] = sispm.getstatus(device, port)
+            for socket in range(sispm.getminport(device), sispm.getmaxport(device) + 1):
+                retval["status"][device_id][socket] = sispm.getstatus(device, socket)
 
     return jsonify(retval)
 
