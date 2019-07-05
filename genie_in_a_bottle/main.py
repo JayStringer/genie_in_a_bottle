@@ -38,7 +38,7 @@ def validate_port(device, port):
     return True
 
 
-app = Flask("EnergenieInterface")
+app = Flask("Genie In a Bottle")
 
 
 class RegexConverter(BaseConverter):
@@ -153,7 +153,7 @@ def get_device_status(device_id=None, port=None):
 
 def main():
     """Run app"""
-    app.run()
+    app.run(port=7357)
 
 if __name__ == "__main__":
     main()

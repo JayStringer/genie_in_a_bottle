@@ -3,9 +3,6 @@
 # Built In
 from setuptools import setup, find_packages
 
-# Local
-from genie_in_a_bottle.version import __version__ as version
-
 
 install_requires = [
     "flask >= 1.0.3",  # Web micro framework
@@ -21,9 +18,12 @@ entry_points = {
 
 setup(
     name="Genie In a Bottle",
-    version=version,
-    maintainer="Jay Stringer",
+    version="0.0.1",
+    author="Jay Stringer",
+    author_email="jayandrewstringer@gmail.com",
     description="REST interface for controlling USB Energenie devices",
+    license=open("LICENSE.txt").read(),
+    url="https://github.com/JayStringer/genie_in_a_bottle",
     packages=find_packages(),
     install_requires=install_requires,
     entry_points=entry_points
